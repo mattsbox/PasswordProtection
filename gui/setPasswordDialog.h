@@ -19,6 +19,5 @@ class SetPasswordDialog:public QDialog
 		void accept();
 	private:
 		Ui::SetPasswordDialog *ui;
-		string scramble(QString,QString);
 };
 #endif

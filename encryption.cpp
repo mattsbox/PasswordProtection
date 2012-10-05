@@ -17,7 +17,45 @@ using CryptoPP::StreamTransformationFilter;
 using std::cerr;
 using std::cout;
 using std::endl;
+#include<stdio.h>
 #include"encryption.h"
+string scramble(QString s1,QString s2)
+{
+	string hash1=applySHA1(string(s1.toAscii().data()));
+	string hash2=applySHA1(string(s2.toAscii().data()));
+	char x[21];
+	int z;
+	string final;
+	for(z=0;z<20;z++)
+	{
+		x[z]=(hash1[z]^hash2[z]);
+	}
+	x[20]='\0';
+	return applySHA1(string(x));
+}
+bool global_passwords_correct(QString p1,QString p2)
+{
+	FILE *pass=fopen("pass","r");
+	string final=scramble(p1,p2);	
+	char filein[21];
+	if(fgets(filein,21,pass)!=NULL)
+	{
+		if(final.compare(string(filein))==0&&string(filein).compare("")!=0)
+		{
+			return fclose(pass)==0;
+		}
+		else
+		{
+			cout<<"INCORRECT PASSWORD"<<endl;
+		}
+	}
+	else
+	{
+		cout<<"UNABLE TO READ PASSWORD FILE"<<endl;
+	}
+	fclose(pass);
+	return false;
+}
 string applySHA1(string text)
 {
 	string result;
@@ -31,7 +69,6 @@ string applySHA1(string text)
 		cerr<<e.what()<<endl;
 		return "";
 	}
-	//cout<<"text"<<text<<endl<<"result"<<result<<endl;
 	return result;
 }
 string encryptAES(string data,string skey)

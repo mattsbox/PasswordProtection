@@ -15,7 +15,7 @@ void MainWindow::on_retrieveButton_clicked()
 {
 	//cout<<ui->firstPasswordLineEdit->text().toAscii().data()<<endl;
 	cout<<"RETRIEVE"<<endl;
-	char* first=ui->firstPasswordLineEdit->text();
+	//char* first=ui->firstPasswordLineEdit->text();
 }
 /*
 *NEW USERNAME BUTTON: Add a new username and password to an old service
