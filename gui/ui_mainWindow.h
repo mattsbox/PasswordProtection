@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainWindow.ui'
 **
-** Created: Thu Aug 23 08:24:05 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Sat Oct 6 14:24:47 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -73,7 +73,7 @@ public:
     QWidget *formLayoutWidget_4;
     QFormLayout *formLayout_4;
     QLabel *usernameLabel_3;
-    QLineEdit *usernameLineEdit_2;
+    QLineEdit *serviceUsernameLineEdit;
     QLabel *passwordLabel_2;
     QLineEdit *servicePasswordLineEdit;
     QLabel *serviceLabel_3;
@@ -256,10 +256,10 @@ public:
 
         formLayout_4->setWidget(1, QFormLayout::LabelRole, usernameLabel_3);
 
-        usernameLineEdit_2 = new QLineEdit(formLayoutWidget_4);
-        usernameLineEdit_2->setObjectName(QString::fromUtf8("usernameLineEdit_2"));
+        serviceUsernameLineEdit = new QLineEdit(formLayoutWidget_4);
+        serviceUsernameLineEdit->setObjectName(QString::fromUtf8("serviceUsernameLineEdit"));
 
-        formLayout_4->setWidget(1, QFormLayout::FieldRole, usernameLineEdit_2);
+        formLayout_4->setWidget(1, QFormLayout::FieldRole, serviceUsernameLineEdit);
 
         passwordLabel_2 = new QLabel(formLayoutWidget_4);
         passwordLabel_2->setObjectName(QString::fromUtf8("passwordLabel_2"));

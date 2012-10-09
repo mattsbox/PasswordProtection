@@ -31,7 +31,7 @@ string scramble(QString s1,QString s2)
 		x[z]=(hash1[z]^hash2[z]);
 	}
 	x[20]='\0';
-	return applySHA1(string(x));
+	return applySHA1(string(x,20));
 }
 bool global_passwords_correct(QString p1,QString p2)
 {
@@ -120,9 +120,7 @@ string decryptAES(string data,string skey)
 	string result,siv=data.substr(0,AES::BLOCKSIZE);
 	data=data.substr(AES::BLOCKSIZE);
 	unsigned char iv[AES::BLOCKSIZE];
-	cout<<"NOT COPIED"<<endl;	
 	memcpy((char*)iv,siv.c_str(),AES::BLOCKSIZE);
-	cout<<"NOW IT'S COPIED"<<endl;
 	//Prepare space for the key and one more space for the null terminator
 	unsigned char key[AES::MAX_KEYLENGTH+1];
 	int keylength=0;

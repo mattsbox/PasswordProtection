@@ -6,10 +6,10 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += . gui
 INCLUDEPATH += .
-LIBS += -lcryptopp
+LIBS += -lcryptopp -lsqlite3
 UI_DIR = gui
 
 # Input
-HEADERS += debug.h encryption.h gui/mainWindow.h gui/setPasswordDialog.h
+HEADERS += encryption.h databases.h gui/mainWindow.h gui/setPasswordDialog.h
 FORMS += gui/mainWindow.ui gui/setPasswordDialog.ui
-SOURCES += debug.cpp encryption.cpp main.cpp gui/mainWindow.cpp gui/setPasswordDialog.cpp
+SOURCES += encryption.cpp databases.cpp main.cpp gui/mainWindow.cpp gui/setPasswordDialog.cpp
