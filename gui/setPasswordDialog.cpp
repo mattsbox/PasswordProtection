@@ -24,35 +24,35 @@ void SetPasswordDialog::accept()
 	char filein[21];
 	if(fgets(filein,21,pass)!=NULL)
 	{
-		if(global_passwords_correct(op1,op2))
+		if(global_passwords_correct(op1,op2,NULL))
 		{
-			cout<<"CORRECT PASSWORDS"<<endl;
+			ui->label->setText("CORRECT PASSWORDS");
 			if(fclose(pass)==0)
 			{
 				pass=fopen("pass","w");
 				if(pass!=NULL)
 				{
 					fprintf(pass,"%s",scramble(np1,np2).c_str());
-					cout<<"PASSWORDS SUCCESSFULLY WRITTEN"<<endl;
+					ui->label->setText("PASSWORDS SUCCESSFULLY WRITTEN");
 					fclose(pass);
 				}
 				else
 				{
-					cout<<"UNABLE TO OPEN PASSWORD FILE FOR WRITING"<<endl;
+					ui->label->setText("UNABLE TO OPEN PASSWORD FILE FOR WRITING");
 				}
 			}
 			else
 			{
-				cout<<"UNABLE TO CLOSE FILE"<<endl;	
+				ui->label->setText("UNABLE TO CLOSE FILE");	
 			}
 		}
 		else
 		{
-			cout<<"INCORRECT PASSWORDS"<<endl;
+			ui->label->setText("INCORRECT PASSWORDS");
 		}
 	}
 	else
 	{
-		cout<<"UNABLE TO READ PASSWORD FILE"<<endl;
+		ui->label->setText("UNABLE TO READ PASSWORD FILE");
 	}
 }

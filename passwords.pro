@@ -10,6 +10,6 @@ LIBS += -lcryptopp -lsqlite3
 UI_DIR = gui
 
 # Input
-HEADERS += encryption.h databases.h gui/mainWindow.h gui/setPasswordDialog.h
-FORMS += gui/mainWindow.ui gui/setPasswordDialog.ui
-SOURCES += encryption.cpp databases.cpp main.cpp gui/mainWindow.cpp gui/setPasswordDialog.cpp
+HEADERS += encryption.h databases.h gui/mainWindow.h gui/setPasswordDialog.h gui/newPasswordDialog.h
+FORMS += gui/mainWindow.ui gui/setPasswordDialog.ui gui/newPasswordDialog.ui
+SOURCES += encryption.cpp databases.cpp main.cpp gui/mainWindow.cpp gui/setPasswordDialog.cpp gui/newPasswordDialog.cpp

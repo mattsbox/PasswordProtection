@@ -1,0 +1,11 @@
+#ifndef DATABASES
+#define DATABASES
+#include<list>
+using std::list;
+#include<string>
+using std::string;
+#include<QString>
+bool add_service(string,string,string,QString,QString);
+bool initdb();
+list<string> get_services();
+#endif

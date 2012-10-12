@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'setPasswordDialog.ui'
 **
-** Created: Thu Aug 23 08:24:05 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Fri Oct 12 11:07:47 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -40,15 +40,16 @@ public:
     QLineEdit *newFirstPasswordLineEdit;
     QLabel *secondPasswordLabel_2;
     QLineEdit *newSecondPasswordLineEdit;
+    QLabel *label;
 
     void setupUi(QDialog *SetPasswordDialog)
     {
         if (SetPasswordDialog->objectName().isEmpty())
             SetPasswordDialog->setObjectName(QString::fromUtf8("SetPasswordDialog"));
-        SetPasswordDialog->resize(386, 180);
+        SetPasswordDialog->resize(386, 225);
         buttonBox = new QDialogButtonBox(SetPasswordDialog);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(40, 140, 341, 32));
+        buttonBox->setGeometry(QRect(40, 190, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         formLayoutWidget = new QWidget(SetPasswordDialog);
@@ -105,10 +106,10 @@ public:
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, newSecondPasswordLineEdit);
 
-        buttonBox->raise();
-        formLayoutWidget->raise();
-        formLayoutWidget_2->raise();
-        secondPasswordLabel_2->raise();
+        label = new QLabel(SetPasswordDialog);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(5, 150, 361, 31));
+        label->setStyleSheet(QString::fromUtf8("font: bold"));
 
         retranslateUi(SetPasswordDialog);
         QObject::connect(buttonBox, SIGNAL(accepted()), SetPasswordDialog, SLOT(accept()));
@@ -124,6 +125,7 @@ public:
         secondPasswordLabel->setText(QApplication::translate("SetPasswordDialog", "Old Password 2", 0, QApplication::UnicodeUTF8));
         firstPasswordLabel_2->setText(QApplication::translate("SetPasswordDialog", "New Password 1", 0, QApplication::UnicodeUTF8));
         secondPasswordLabel_2->setText(QApplication::translate("SetPasswordDialog", "New Password 2", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("SetPasswordDialog", "Please enter your passwords", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

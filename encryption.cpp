@@ -33,7 +33,7 @@ string scramble(QString s1,QString s2)
 	x[20]='\0';
 	return applySHA1(string(x,20));
 }
-bool global_passwords_correct(QString p1,QString p2)
+bool global_passwords_correct(QString p1,QString p2,MainWindow* mw)
 {
 	FILE *pass=fopen("pass","r");
 	string final=scramble(p1,p2);	
@@ -44,14 +44,14 @@ bool global_passwords_correct(QString p1,QString p2)
 		{
 			return fclose(pass)==0;
 		}
-		else
+		else if(mw)
 		{
-			cout<<"INCORRECT PASSWORD"<<endl;
+			mw->print("INCORRECT PASSWORD");
 		}
 	}
-	else
+	else if(mw)
 	{
-		cout<<"UNABLE TO READ PASSWORD FILE"<<endl;
+		mw->print("UNABLE TO READ PASSWORD FILE");
 	}
 	fclose(pass);
 	return false;
@@ -66,7 +66,6 @@ string applySHA1(string text)
 	}
 	catch(const CryptoPP::Exception& e)
 	{
-		cerr<<e.what()<<endl;
 		return "";
 	}
 	return result;
@@ -105,7 +104,7 @@ string encryptAES(string data,string skey)
 		CBC_Mode<AES>::Encryption e;
 		e.SetKeyWithIV(key,keylength,iv);
 		//Send data into a pipeline from StringSource through StreamTransformationFilter and into StringSink, to fill cipher
-		StringSource(data,true,new StreamTransformationFilter(e,new StringSink(result)));
+		StringSource(data,true,new StreamTransformationFilter(e,new StringSink(result)/*,StreamTransformationFilter::ZEROS_PADDING*/));
 		result=string(iv,iv+sizeof(iv)/sizeof(char))+result;
 	}
 	catch(const CryptoPP::Exception& e)
@@ -148,7 +147,7 @@ string decryptAES(string data,string skey)
 		CBC_Mode<AES>::Decryption d;
 		d.SetKeyWithIV(key,keylength,iv);
 		//Send data into a pipeline from StringSource through StreamTransformationFilter and into StringSink, to fill data
-		StringSource(data,true,new StreamTransformationFilter(d,new StringSink(result)));
+		StringSource(data,true,new StreamTransformationFilter(d,new StringSink(result)/*,StreamTransformationFilter::ZEROS_PADDING*/));
 	}
 	catch(const CryptoPP::Exception& e)
 	{

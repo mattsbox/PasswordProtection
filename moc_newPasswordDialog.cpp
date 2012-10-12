@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'setPasswordDialog.h'
+** Meta object code from reading C++ file 'newPasswordDialog.h'
 **
-** Created: Fri Oct 12 11:07:57 2012
+** Created: Fri Oct 12 11:07:58 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "gui/setPasswordDialog.h"
+#include "gui/newPasswordDialog.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'setPasswordDialog.h' doesn't include <QObject>."
+#error "The header file 'newPasswordDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.3. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_SetPasswordDialog[] = {
+static const uint qt_meta_data_NewPasswordDialog[] = {
 
  // content:
        6,       // revision
@@ -36,15 +36,15 @@ static const uint qt_meta_data_SetPasswordDialog[] = {
        0        // eod
 };
 
-static const char qt_meta_stringdata_SetPasswordDialog[] = {
-    "SetPasswordDialog\0\0accept()\0"
+static const char qt_meta_stringdata_NewPasswordDialog[] = {
+    "NewPasswordDialog\0\0accept()\0"
 };
 
-void SetPasswordDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void NewPasswordDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        SetPasswordDialog *_t = static_cast<SetPasswordDialog *>(_o);
+        NewPasswordDialog *_t = static_cast<NewPasswordDialog *>(_o);
         switch (_id) {
         case 0: _t->accept(); break;
         default: ;
@@ -53,33 +53,33 @@ void SetPasswordDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-const QMetaObjectExtraData SetPasswordDialog::staticMetaObjectExtraData = {
+const QMetaObjectExtraData NewPasswordDialog::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject SetPasswordDialog::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_SetPasswordDialog,
-      qt_meta_data_SetPasswordDialog, &staticMetaObjectExtraData }
+const QMetaObject NewPasswordDialog::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_NewPasswordDialog,
+      qt_meta_data_NewPasswordDialog, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &SetPasswordDialog::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &NewPasswordDialog::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *SetPasswordDialog::metaObject() const
+const QMetaObject *NewPasswordDialog::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *SetPasswordDialog::qt_metacast(const char *_clname)
+void *NewPasswordDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_SetPasswordDialog))
-        return static_cast<void*>(const_cast< SetPasswordDialog*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_NewPasswordDialog))
+        return static_cast<void*>(const_cast< NewPasswordDialog*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int SetPasswordDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int NewPasswordDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
